@@ -18,7 +18,7 @@ function Header() {
         <HeaderItem title="Home" Icon={HomeIcon} />
       </div>
       <Image
-        src="/public/images/hulusony.png"
+        src="/images/hulusony.png"
         width={200}
         height={100}
         className="object-contain"
