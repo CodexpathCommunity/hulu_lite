@@ -1,7 +1,23 @@
-function Thumbnail() {
+import Image from "next/image";
+
+function Thumbnail({ result }) {
+  const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
     <div>
-      <h2>this is thb</h2>
+      <Image
+        layout="responsive"
+        src={
+          `
+        ${BASE_URL}${result.backdrop || result.poster_path}
+       ` || `${BASE_URL}${result.poster_path}`
+        }
+        height={1080}
+        width={1920}
+      />
+      <div className="p-2 text-red-200">
+        <p className="">{result.overview}</p>
+        <h2>{result.title || result.original_name} </h2>
+      </div>
     </div>
   );
 }
